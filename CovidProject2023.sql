@@ -14,10 +14,10 @@ ORDER BY date DESC
 
 --LOOKING FOR COUNTRIES WITH HIGHEST INFECTION RATE PER POPULATION
 SELECT location,MAX(total_cases) AS HighestInfection ,population, MAX((total_cases/population))* 100 AS 
-%Casesperpopulation
+PercentCasesperpopulation
 FROM coviddeaths
 GROUP BY location, population
-ORDER BY %Casesperpopulation DESC
+ORDER BY PercentCasesperpopulation DESC
 
 -- LOOKING FOR HIGHEST DEATH COUNT IN WORLD
 SELECT location,MAX(total_deaths) AS DeathCount
